@@ -1,0 +1,7 @@
+<p><b>To Sign up as Admin</b></p>
+<%= form_for(@key) do |f| %>
+ <%= f.label 'Enter Key:' %>
+ <%= f.text_field :val %>
+ <%= f.submit 'Enter' %>
+<% end %>
+<%= link_to 'Skip', new_user_path %>

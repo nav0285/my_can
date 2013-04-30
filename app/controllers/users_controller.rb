@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
-def new
-   @user = User.new
+  def new
+   if cookies[:key_val]=="one"
+     @user = User.new(:role=>"admin")
+     cookies.delete(:key_val)
+   else
+     @user = User.new(:role=>"guest")
+   end
   end
 
  def create
